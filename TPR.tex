@@ -13,7 +13,9 @@
 
 The thesis will be to produce a formally verified implementation of the Viterbi algorithm.
 
+To create a principled, foundational implementation of error correcting code techniques. Existing implementations aren't as foundational, or ...
 
+Whereas other approaches take an approach where they formally prove properties in the programming language itself, using interactive-theorem prover based methods have the additional improvements of increased fidelity of proof techniques, as you do not have to rely on an automated system to do all the proof for you. Furthermore, the automated system often takes a long time to perform its proofs. Looking at things from a human perspective and proving thnigs manually gives you the ability to direct the proof and use human knowledge explicitly to prove known results.
 
 \subsection{What is the Viterbi algorithm}
 
@@ -167,13 +169,47 @@ Mentions Hamming codes, Hsaio codes, Reed-Solomon codes and Bose-Chandhuri-Hocqu
 
 (direct quote) ``The ECC used in this work is a combinatorial Quad Bit Error Detection, Triple Bit Error Correction (QEDTEC) ECC''.
 
+Prior approach was simulation-based, testing style approach
+
+New approach use mathematical analysis and proof methods.
+
+Keyword property is used in the formal prover
+
+What formal prover is used?
+
+What specific ECC is used? Description is ambiguous
+
+Formal verifier takes design and desired properties as inputs.
+
+(systemverilog assertions)
+
+Seems to use SystemVerilog
+
+For larger designs, can take a long time to verfiy.
+
+Algorithm consists of Syndrome generator, error detection unit and error correction unit.
+
+My algorithm works in a completely different way using completely different tooling. It uses more authomated kinds of proof techniques
+
 \subsubsection{Formal Verification by The Book: Error Detection and Correction Codes 2020}
+
+UVM-based in previous work.
+
+Seems to be in a similar field to Aman Kumar's work, and not related to interactive theorem provers. Therefore not relevant to my work.
 
 \subsubsection{Verification of an error correcting code by abstract interpretation, by Charles Hymans 2005}
 
 Validated Reed-Solomon
 
+VHDL (VHSIC Hardware Description Language)
+
+Also uses formally verified programming, not interactive theorem provers.
+
+Uses abstract interpretation: unrelated to my work.
+
 \subsubsection{A Library for Formalization of Linear Error-Correcting Codes 2020, 8 citations}
+
+Systematic formalization of error correcting codes in the Coq proof-assistent.
 
 \subsubsection{Robust error detection in communication and computational channels, 2007, 72 citations}
 
@@ -268,6 +304,26 @@ In syndrome decoding, just need coset leaders, syndromes, and parity check matri
 
 Minimum distance of linear code $C$ is the size of the smallest dependent set of columns of $H$.
 
+\paragraph{Hamming Family}
+
+Hamming codes: Ham$(r, q)$ is the set of those linear $[n, k]$ codes whose parity check matrices have $r$ rows and $n$ columns, where $n$ is the largest possible number of columns that have no pair of columns dependent.
+
+All codes in Ham$(r, q)$ have length $n = \frac{q^r - 1}{q - 1}$
+
+All codes in Ham$(r,q)$ are linearly equivalent to each other.
+
+All Hamming codes have a minimum distance of 3
+
+All Hamming codes are perfect
+
+(todo what does this mean) In any linear code, the distribution of codeword weights is indentical to the distance distribution.
+
+The dual of any Hamming code is called a simplex code. 	
+
+All simplex codes are equideistant codes.
+
+todo: continue from theorem 6.7
+
 \subsubsection{(found via google search) A course in error-correcting codes, by J Justesen, T Høholdt }
 
 Includes convolutional codes info
@@ -286,16 +342,30 @@ Moderate relevance. Information on ECCs
 
 \subsubsection{(found google search different book) A Course in Algebraic Error-Correcting Codes}
 
-Shannon's Theorem, Finite Fields, Block Codes, Linear Codes, Cyclic codes, Maximum Distance Separable Codes, Alternant and Algebraic Geometric Codes, Low Density Parity Check Codes, Reed-Muller and Kerdock Codes, 
+Shannon's Theorem, Finite Fields, Block Codes, Linear Codes, Cyclic codes, Maximum Distance Separable Codes, Alternant and Algebraic Geometric Codes, Low Density Parity Check Codes, Reed-Muller and Kerdock Codes, p-Adic codes
 
 \subsubsection{Hamming, R.W.: Error detecting and error correcting codes.}
 
 \subsubsection{The Theory of Information and Coding, Encyclopedia of Mathematics and its Applica-
 tions}
 
+Information theory: entropy, discrete memoryless channels, discrete memoryless sources, the gaussian channel, the source-channel coding theorem
+
+Coding theory: linear codes, cyclic codes, BCH, Reed-Solomon, convolutional codes, variable-length source coding
+
 \subsubsection{Polynomial codes over certain finite fields}
 
-\subsubsection{Modern Coding Theory. (probably intend the one by T. Richardson, R. Urbanke)}
+\subsubsection{Modern Coding Theory. (probably intend the one by T. Richardson, R. Urbanke, 2008)}
+
+Factor graphs, binary erasure channel, binary memoryless symmetric channels, general channels, turbo codes, general ensembles, expander codes and flipping algorithm,
+
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Other theory}
+
+Soft errors are non-repeatable, temporary errors caused by external interference.
+
+Hard errors are caused by a repeatable problem, e.g. a problem in the circuit or algorithm.
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
