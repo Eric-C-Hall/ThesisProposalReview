@@ -32,88 +32,114 @@ The Viterbi algorithm is a
 This project aligns closely with defence innovation network StarShot priority areas.
 
 In particular, it would be useful in ``secure and resilient communications delivered from space for a highly networked force.''
-%
-%\subsection {Copy pasted from first research proposal}
-%
-%The purpose of this project is to use an interactive theorem prover to formally prove foundational mathematical theorems in the area of algebra, including such areas as group theory, field theory, and Galois theory. Future researchers will be able to build upon these proofs, improving our confidence that our mathematical theories are correct.
-%
-%Theorem proving has traditionally been done by hand, but this is time-consuming and prone to error. While humans are very good at understanding things on a conceptual level, they have a tendency to make silly mistakes when performing simple, boring, repetitive tasks, and the conceptual understanding they have of the topic has a tendency to obscure unjustified leaps in logic that appear “intuitive” to the human. Furthermore, the level of confidence that a third party has on the validity of a proof depends largely on how much they trust that the person performing the proof has done a good job at verifying their proof is correct. If they do not have such trust, then they must perform the boring, repetitive work of verifying the proof for themselves.
-%
-%The simple, boring and repetitive nature of checking the validity of a proof makes it a prime target for automation by computers, which excel at simple and repetitive tasks. By using a computer to perform the brute work of verifying the correctness of the proof, the user is able to prove theorems to an impeccably high standard of formality, without the arduous process of checking that each stage of the proof is formally correct. It also allows a third party to have a high level of trust in the validity of the proven theorem without having to check the proof themselves, so long as they trust that the proof-checking software has been programmed correctly.
-%
-%Furthermore, some theorem proving can be performed automatically by computers. This is best suited to simple and tedious derivations that need to be performed but do not require a high degree of understanding and are simply routine proofs. Using an automated theorem prover to make these derivations will take some of the load off the human prover, freeing the human from being bogged down in the minutiae of formal proof. Beyond that, the automated theorem provers may also have the ability to perform non-trivial proofs without the expenditure of human effort.
-%
-%Automated theorem provers have weaknesses, though. The place where humans really shine is in having a deep understanding of the meaning behind the theorems. Whereas the computer is just manipulating symbols, the human will typically have a better conceptual understanding of what these symbols mean and why they are important, and how they relate to each other. While work is ongoing in order to improve the ability of computers to attain this kind of understanding, this is still one of their weaknesses and humans will have an advantage in solving complex problems where a general understanding of the problem to be solved is useful.
-%
-%In this way, the human and computer solver cover each other’s weaknesses: the human excels at understanding the problem, whereas the automated theorem prover is very good at performing the grunt work.
-%
-%One major application area of interactive theorem proving is in proving the correctness of vital software in scenarios in which no bugs are tolerable. Examples of such application areas include cryptography, vote-counting software, medical software, software for controlling spacecraft or other vehicles, software for controlling industrial machinery such as nuclear power plants, etc. In such scenarios where any bug could have a catastrophic effect, it is important to be confident that your systems work as intended. By using an interactive theorem prover to prove that the output of the relevant code is correct, we may achieve the necessary confidence that our code is safe.
-%
-%Interactive theorem proving is also useful for improving our confidence in our understanding of mathematics and adjacent fields in general. Mathematics underpins much of the modern world, and to be confident in the effectiveness of many real-world systems, it is important to be confident in the underlying mathematics. The process of formalizing our mathematical theories is likely to expose flaws in our current understanding of mathematics, especially in the less well-trodden areas where the proofs have not been exposed to the level of scrutiny that is typical of more widely studied areas of mathematics.
-%
-%My specific project aims to be a foundational building block in achieving these goals. I aim to produce a computer-assisted formalization of commonly used mathematical theorems, so that future researchers can build on top of this to produce computer-formalized proofs of theorems that are important in their own application areas. This could be used by future researchers both in domain-specific applications and in simply solidifying our understanding of mathematics in general. 
-%
-%The specific area I would like to work in is algebra: in particular, areas such as group theory, field theory, and Galois theory. These are fundamental areas of study of vital importance to a large number of other disciplines, which is why I chose them as a topic of study.
-%
-%As of right now, I am still in the beginning stages of literature review to identify pre-existing research on the topic. There does seem to be at least some relevant literature already on the topic of the formalization of Galois theory (see [1] and [2]). Although research has been done in this area before, there is still likely room to perform more research, as there are many useful theorems and only some will have been formalized. In addition, I expect that there are many closely related fields of algebra which have not yet had formalization work applied to them.
-%
-%Novel ideas will be required in order to formalize the mathematics, because the theorems have not been proven to the required standard of rigor necessary. The existing proofs will likely be in a human-readable form rather than in a formal, computer-readable form, and as a result they will likely be missing key details necessary to make the proofs work in an interactive theorem prover setting.
-%
-%References:
-%
-%[1]    T. Browning and P. Lutz. “Formalizing Galois Theory”. Experimental Mathematics, vol. 31, pp 413-424, 2021
-%
-%[2]    N. Curiel. “Formalizing Galois Theory I: Automorphism Groups of Fields”. Master’s Thesis, California State University San Marcos, MSc, 2011
-%
-%[3]    M. Norrish. “Mechanised Computability Theory”. International Conference on Interactive Theorem Proving, pp 297-311, 2011
-%
-%[4]    R. Affeldt, J. Garrigue and T. Saikawa. “Formalization of Reed-Solomon codes and progress report on formalization of LDPC codes”. International Symposium on Information Theory and Its Applications, pp 532-536, 2016
-%
-%https://ieeexplore.ieee.org/document/7840481 Formalization of Reed-Solomon codes and progress report on formalization of LDPC codes
-%
-%\subsection{Copy pasted from second research proposal}
-%
-%The purpose of this project is to use an interactive theorem prover to produce a formally verified implementation of the Viterbi algorithm. This would also involve the formalization of underlying mathematical theorems which could be of general use.
-%
-%When reading data from a noisy channel, errors are likely to occur. If we provide redundant information over this channel, then when an error occurs, it is possible to use the redundant information to correct the error with high probability [1]. Encodings of data that allow for this error-correcting property are called error-correcting codes.
-%
-%The Viterbi algorithm is an algorithm that is used to decode a certain class of error-correcting codes [2].
-%
-%Interactive theorem proving is a technique used to formally prove that a system works correctly with respect to a specification [3]. As long as there is trust that the theorem prover and the specification are both correct, this provides an 100% guarantee that the algorithm behaves correctly. This is useful in situations where failure could be catastrophic and thus we need extremely reliable software, for example in pacemakers or self-driving cars.
-%
-%It would be useful to have a formally verified implementation of the Viterbi algorithm, because the algorithm may be used in systems that have a requirement of high reliability. It is extremely common to need to read information from a potentially noisy channel. Common examples include reading from a wireless connection [4] or even from a hard drive [5]. Most real-world systems would have a need to do these kinds of basic tasks, thus, most real-world systems have a need for error-correcting codes to some degree. This includes those systems that would benefit from the correctness guarantees provided by formal proof. Thus, the improved reliability of having a formally verified implementation of the Viterbi algorithm would be useful in practice in real-world systems with low fault tolerance.
-%
-%Formalization of other error correcting codes has been performed in the past. For example, the correctness of Reed-Solomon codes has been formally proved using interactive theorem provers [6]. Also, the correctness of the Viterbi algorithm has been proven using handwritten methods [2], although handwritten methods are by nature less reliable than computer-verified methods. However, in my preliminary review of the literature, I have not encountered a computer verified formalization of the Viterbi algorithm. Thus, it should satisfy the novelty requirements of a PhD. 
-%
-%The formal proving process is not merely a mechanical implementation process. Previous proofs of the correctness of the Viterbi algorithm were written to satisfy a human reviewer, not to satisfy a formal computer verifier. Therefore, they almost certainly handwave parts of the proof, and have gaps in them which they fail to prove to a sufficient standard of rigor. In order to fill in the gaps in the proof, it will be necessary to come up with new ideas, rather than merely implementing old ones. Thus, the project also has the element of research that is expected of a PhD (rather than being pure development work).
-%
-%The formalization will require a significant amount of work, because proving something to the requisite standard of rigor necessary for formal proof requires it to be proven to a high level of detail. Furthermore, there is ample room for extending the project in case it takes less work than expected. In 2016, R Affeldt et al said that formal verification of error-correcting codes is understudied [6], and based on my preliminary review of the literature, I agree that there is a significant amount of room for expansion. Thus, even in the case where the production of a formally verified Viterbi algorithm takes less work than expected, it should be possible to extend the project by performing more work, for example, by proving the correctness of other error correcting code algorithms. Therefore, it should be possible to perform sufficient work in this area to be appropriate for a PhD.
-%
-%On the other hand, the amount of work required can be realistically achieved within a PhD project. Interactive theorem provers are a proven technology that have been used to produce formally verified implementations of several algorithms, for example a formally verified OS kernel [7] and a formally verified compiler of a pure programming language [8]. This shows that the techniques necessary to produce a formally verified implementation of even complex algorithms is available. On the one hand, the formal implementations of these algorithms involved several authors, but on the other hand they also were implementations of relatively complicated systems, so in my estimation the amount of work required to produce a formally verified implementation of the Viterbi algorithm should be appropriate for a PhD.
-%
-%To evaluate my progress mid-way through the PhD, it should be possible to look at the proofs and specifications that have been produced so far. The project will have several stages which will need to be completed before the project as a whole can be completed. For example, we will need to create a specification for the Viterbi algorithm, we will need to prove theorems describing the mathematical background that the Viterbi algorithm is based upon, and we will need to prove the correctness of individual parts of the Viterbi algorithm. Then in order to evaluate how much progress I have made in my PhD, I should be able to look at how many proofs/specifications have been written so far. This would allow us to have a sense of whether or not progress was being made on the project, providing a greater guarantee that the PhD program would be completed successfully and on time.
-%
-%In summary, my proposal is to use an interactive theorem prover to produce a formally verified implementation of the Viterbi algorithm. This would be useful because error-correcting codes are necessary in a wide variety of applications, including those in which it is necessary to have a high level of confidence in the correctness of the software. This project would be feasible, as similar projects have been completed before, and this project would take a significant amount of work, as a high level of detail would be necessary to provide a sufficiently rigorous formal proof. It would furthermore be possible to evaluate the progression of the project by evaluating the work that has been completed so far, which could include a specification for the Viterbi algorithm or the proof of sub-theorems necessary in the correctness proof of the overall algorithm.
-%
-%References:
-%
-%[1]    J. Baylis, Error Correcting Codes: A Mathematical Introduction. Boca Raton: Chapman \& Hall, 1998.
-%
-%[2]    A. Viterbi, “Error Bounds for Convolutional Codes and an Asymptotically Optimum Decoding Algorithm,” IEEE Transactions on Information Theory, vol. 13, pp. 260-269, Apr 1967.
-%
-%[3]    Y. Bertot, P. Casteran, Interactive Theorem Proving and Program Development: Coq’Art: The Calculus of Inductive Constructions. Heidelberg: Springer-Verlag, 2004.
-%
-%[4]    M. C. Vuran, I. F. Akyildiz, “Error Control in Wireless Sensor Networks: A Cross Layer Analysis”, IEEE/ACM Transactions on Networking, vol. 17, pp. 1186-1199, Aug 2009
-%
-%[5]    D. Patterson, G. Gibson, R. H. Katz, “A Case for Redundant Arrays of Inexpensive Disks (RAID),” Proceedings of the 1988 ACM SIGMOD International Conference on Management of Data, pp. 109-116, Jun 1988
-%
-%[6]    R. Affeldt, J. Garrigue and T. Saikawa, “Formalization of Reed-Solomon codes and progress report on formalization of LDPC codes,” International Symposium on Information Theory and Its Applications, pp. 532-536, Oct 2016.
-%
-%[7]    G. Klein, K. Elphinstone, G. Heiser, J. Andronivk, D. Cock, P. Derrin, D. Elkaduwe, K. Engelhardt, R. Kolanski, M. Norrish, T. Sewell, H. Tuch, S. Winwood, “seL4: Formal Verification of an OS Kernel,” Proceedings of the ACM SIGOPS 22nd symposium on Operating systems principles, pp. 207-220, Oct 2009.
-%
-%[8]    R. Kumar, M. O. Myreen, M. Norrish, S. Owens, “CakeML: a verified implementation of ML,” ACM Sigplan Notices, vol. 49, pp. 179-191, Jan 2014.
-%
+
+\subsection {Copy pasted from first research proposal}
+
+The purpose of this project is to use an interactive theorem prover to formally prove foundational mathematical theorems in the area of algebra, including such areas as group theory, field theory, and Galois theory. Future researchers will be able to build upon these proofs, improving our confidence that our mathematical theories are correct.
+
+Theorem proving has traditionally been done by hand, but this is time-consuming and prone to error. While humans are very good at understanding things on a conceptual level, they have a tendency to make silly mistakes when performing simple, boring, repetitive tasks, and the conceptual understanding they have of the topic has a tendency to obscure unjustified leaps in logic that appear “intuitive” to the human. Furthermore, the level of confidence that a third party has on the validity of a proof depends largely on how much they trust that the person performing the proof has done a good job at verifying their proof is correct. If they do not have such trust, then they must perform the boring, repetitive work of verifying the proof for themselves.
+
+The simple, boring and repetitive nature of checking the validity of a proof makes it a prime target for automation by computers, which excel at simple and repetitive tasks. By using a computer to perform the brute work of verifying the correctness of the proof, the user is able to prove theorems to an impeccably high standard of formality, without the arduous process of checking that each stage of the proof is formally correct. It also allows a third party to have a high level of trust in the validity of the proven theorem without having to check the proof themselves, so long as they trust that the proof-checking software has been programmed correctly.
+
+Furthermore, some theorem proving can be performed automatically by computers. This is best suited to simple and tedious derivations that need to be performed but do not require a high degree of understanding and are simply routine proofs. Using an automated theorem prover to make these derivations will take some of the load off the human prover, freeing the human from being bogged down in the minutiae of formal proof. Beyond that, the automated theorem provers may also have the ability to perform non-trivial proofs without the expenditure of human effort.
+
+Automated theorem provers have weaknesses, though. The place where humans really shine is in having a deep understanding of the meaning behind the theorems. Whereas the computer is just manipulating symbols, the human will typically have a better conceptual understanding of what these symbols mean and why they are important, and how they relate to each other. While work is ongoing in order to improve the ability of computers to attain this kind of understanding, this is still one of their weaknesses and humans will have an advantage in solving complex problems where a general understanding of the problem to be solved is useful.
+
+In this way, the human and computer solver cover each other’s weaknesses: the human excels at understanding the problem, whereas the automated theorem prover is very good at performing the grunt work.
+
+One major application area of interactive theorem proving is in proving the correctness of vital software in scenarios in which no bugs are tolerable. Examples of such application areas include cryptography, vote-counting software, medical software, software for controlling spacecraft or other vehicles, software for controlling industrial machinery such as nuclear power plants, etc. In such scenarios where any bug could have a catastrophic effect, it is important to be confident that your systems work as intended. By using an interactive theorem prover to prove that the output of the relevant code is correct, we may achieve the necessary confidence that our code is safe.
+
+Interactive theorem proving is also useful for improving our confidence in our understanding of mathematics and adjacent fields in general. Mathematics underpins much of the modern world, and to be confident in the effectiveness of many real-world systems, it is important to be confident in the underlying mathematics. The process of formalizing our mathematical theories is likely to expose flaws in our current understanding of mathematics, especially in the less well-trodden areas where the proofs have not been exposed to the level of scrutiny that is typical of more widely studied areas of mathematics.
+
+My specific project aims to be a foundational building block in achieving these goals. I aim to produce a computer-assisted formalization of commonly used mathematical theorems, so that future researchers can build on top of this to produce computer-formalized proofs of theorems that are important in their own application areas. This could be used by future researchers both in domain-specific applications and in simply solidifying our understanding of mathematics in general. 
+
+The specific area I would like to work in is algebra: in particular, areas such as group theory, field theory, and Galois theory. These are fundamental areas of study of vital importance to a large number of other disciplines, which is why I chose them as a topic of study.
+
+As of right now, I am still in the beginning stages of literature review to identify pre-existing research on the topic. There does seem to be at least some relevant literature already on the topic of the formalization of Galois theory (see [1] and [2]). Although research has been done in this area before, there is still likely room to perform more research, as there are many useful theorems and only some will have been formalized. In addition, I expect that there are many closely related fields of algebra which have not yet had formalization work applied to them.
+
+Novel ideas will be required in order to formalize the mathematics, because the theorems have not been proven to the required standard of rigor necessary. The existing proofs will likely be in a human-readable form rather than in a formal, computer-readable form, and as a result they will likely be missing key details necessary to make the proofs work in an interactive theorem prover setting.
+
+References:
+
+[1]    T. Browning and P. Lutz. “Formalizing Galois Theory”. Experimental Mathematics, vol. 31, pp 413-424, 2021
+
+[2]    N. Curiel. “Formalizing Galois Theory I: Automorphism Groups of Fields”. Master’s Thesis, California State University San Marcos, MSc, 2011
+
+[3]    M. Norrish. “Mechanised Computability Theory”. International Conference on Interactive Theorem Proving, pp 297-311, 2011
+
+[4]    R. Affeldt, J. Garrigue and T. Saikawa. “Formalization of Reed-Solomon codes and progress report on formalization of LDPC codes”. International Symposium on Information Theory and Its Applications, pp 532-536, 2016
+
+https://ieeexplore.ieee.org/document/7840481 Formalization of Reed-Solomon codes and progress report on formalization of LDPC codes
+
+\subsection{Copy pasted from second research proposal}
+
+The purpose of this project is to use an interactive theorem prover to produce a formally verified implementation of the Viterbi algorithm. This would also involve the formalization of underlying mathematical theorems which could be of general use.
+
+When reading data from a noisy channel, errors are likely to occur. If we provide redundant information over this channel, then when an error occurs, it is possible to use the redundant information to correct the error with high probability [1]. Encodings of data that allow for this error-correcting property are called error-correcting codes.
+
+The Viterbi algorithm is an algorithm that is used to decode a certain class of error-correcting codes [2].
+
+Interactive theorem proving is a technique used to formally prove that a system works correctly with respect to a specification [3]. As long as there is trust that the theorem prover and the specification are both correct, this provides an 100% guarantee that the algorithm behaves correctly. This is useful in situations where failure could be catastrophic and thus we need extremely reliable software, for example in pacemakers or self-driving cars.
+
+It would be useful to have a formally verified implementation of the Viterbi algorithm, because the algorithm may be used in systems that have a requirement of high reliability. It is extremely common to need to read information from a potentially noisy channel. Common examples include reading from a wireless connection [4] or even from a hard drive [5]. Most real-world systems would have a need to do these kinds of basic tasks, thus, most real-world systems have a need for error-correcting codes to some degree. This includes those systems that would benefit from the correctness guarantees provided by formal proof. Thus, the improved reliability of having a formally verified implementation of the Viterbi algorithm would be useful in practice in real-world systems with low fault tolerance.
+
+Formalization of other error correcting codes has been performed in the past. For example, the correctness of Reed-Solomon codes has been formally proved using interactive theorem provers [6]. Also, the correctness of the Viterbi algorithm has been proven using handwritten methods [2], although handwritten methods are by nature less reliable than computer-verified methods. However, in my preliminary review of the literature, I have not encountered a computer verified formalization of the Viterbi algorithm. Thus, it should satisfy the novelty requirements of a PhD. 
+
+The formal proving process is not merely a mechanical implementation process. Previous proofs of the correctness of the Viterbi algorithm were written to satisfy a human reviewer, not to satisfy a formal computer verifier. Therefore, they almost certainly handwave parts of the proof, and have gaps in them which they fail to prove to a sufficient standard of rigor. In order to fill in the gaps in the proof, it will be necessary to come up with new ideas, rather than merely implementing old ones. Thus, the project also has the element of research that is expected of a PhD (rather than being pure development work).
+
+The formalization will require a significant amount of work, because proving something to the requisite standard of rigor necessary for formal proof requires it to be proven to a high level of detail. Furthermore, there is ample room for extending the project in case it takes less work than expected. In 2016, R Affeldt et al said that formal verification of error-correcting codes is understudied [6], and based on my preliminary review of the literature, I agree that there is a significant amount of room for expansion. Thus, even in the case where the production of a formally verified Viterbi algorithm takes less work than expected, it should be possible to extend the project by performing more work, for example, by proving the correctness of other error correcting code algorithms. Therefore, it should be possible to perform sufficient work in this area to be appropriate for a PhD.
+
+On the other hand, the amount of work required can be realistically achieved within a PhD project. Interactive theorem provers are a proven technology that have been used to produce formally verified implementations of several algorithms, for example a formally verified OS kernel [7] and a formally verified compiler of a pure programming language [8]. This shows that the techniques necessary to produce a formally verified implementation of even complex algorithms is available. On the one hand, the formal implementations of these algorithms involved several authors, but on the other hand they also were implementations of relatively complicated systems, so in my estimation the amount of work required to produce a formally verified implementation of the Viterbi algorithm should be appropriate for a PhD.
+
+To evaluate my progress mid-way through the PhD, it should be possible to look at the proofs and specifications that have been produced so far. The project will have several stages which will need to be completed before the project as a whole can be completed. For example, we will need to create a specification for the Viterbi algorithm, we will need to prove theorems describing the mathematical background that the Viterbi algorithm is based upon, and we will need to prove the correctness of individual parts of the Viterbi algorithm. Then in order to evaluate how much progress I have made in my PhD, I should be able to look at how many proofs/specifications have been written so far. This would allow us to have a sense of whether or not progress was being made on the project, providing a greater guarantee that the PhD program would be completed successfully and on time.
+
+In summary, my proposal is to use an interactive theorem prover to produce a formally verified implementation of the Viterbi algorithm. This would be useful because error-correcting codes are necessary in a wide variety of applications, including those in which it is necessary to have a high level of confidence in the correctness of the software. This project would be feasible, as similar projects have been completed before, and this project would take a significant amount of work, as a high level of detail would be necessary to provide a sufficiently rigorous formal proof. It would furthermore be possible to evaluate the progression of the project by evaluating the work that has been completed so far, which could include a specification for the Viterbi algorithm or the proof of sub-theorems necessary in the correctness proof of the overall algorithm.
+
+References:
+
+[1]    J. Baylis, Error Correcting Codes: A Mathematical Introduction. Boca Raton: Chapman \& Hall, 1998.
+
+[2]    A. Viterbi, “Error Bounds for Convolutional Codes and an Asymptotically Optimum Decoding Algorithm,” IEEE Transactions on Information Theory, vol. 13, pp. 260-269, Apr 1967.
+
+[3]    Y. Bertot, P. Casteran, Interactive Theorem Proving and Program Development: Coq’Art: The Calculus of Inductive Constructions. Heidelberg: Springer-Verlag, 2004.
+
+[4]    M. C. Vuran, I. F. Akyildiz, “Error Control in Wireless Sensor Networks: A Cross Layer Analysis”, IEEE/ACM Transactions on Networking, vol. 17, pp. 1186-1199, Aug 2009
+
+[5]    D. Patterson, G. Gibson, R. H. Katz, “A Case for Redundant Arrays of Inexpensive Disks (RAID),” Proceedings of the 1988 ACM SIGMOD International Conference on Management of Data, pp. 109-116, Jun 1988
+
+[6]    R. Affeldt, J. Garrigue and T. Saikawa, “Formalization of Reed-Solomon codes and progress report on formalization of LDPC codes,” International Symposium on Information Theory and Its Applications, pp. 532-536, Oct 2016.
+
+[7]    G. Klein, K. Elphinstone, G. Heiser, J. Andronivk, D. Cock, P. Derrin, D. Elkaduwe, K. Engelhardt, R. Kolanski, M. Norrish, T. Sewell, H. Tuch, S. Winwood, “seL4: Formal Verification of an OS Kernel,” Proceedings of the ACM SIGOPS 22nd symposium on Operating systems principles, pp. 207-220, Oct 2009.
+
+[8]    R. Kumar, M. O. Myreen, M. Norrish, S. Owens, “CakeML: a verified implementation of ML,” ACM Sigplan Notices, vol. 49, pp. 179-191, Jan 2014.
+
 \section{Literature Review}
+
+\subsection{Overview of literature}
+
+This week I skimmed through many papers which I previously identified as being relevant to my research, to identify the main contributions of each of them. I have now skimmed the literature sufficiently thoroughly to be confident that my proposed research area doesn't overlap with any existing research (my previous assessment of the situation had been tentative, based on a more cursory literature review).
+
+I count 11 papers that involve formal verification (FV) related to Error Correcting Codes (ECCs) through means of interactive theorem provers (ITPs), and 8 additional papers on the subject of formal verification of ECCs through other means.
+
+Only one paper has included formalization of convolutional codes. This paper was written in 2020, and the paper itself claims to be the first formalization of a convolutional code. I agree with this assessment, based on my own examination of the literature. This paper used ACL2 for its formalization. My understanding is that this paper did not formalize the Viterbi algorithm, instead focusing on a different convolutional algorithm.
+
+Several papers (including the above paper) have provided libraries of useful functions relating to error-correcting codes. Most notably amongst them is "A library for formalization of linear error-correcting codes". This paper uses the Coq proof-assistant to formalize Hamming, Reed-Solomon, and BCH codes.
+
+The above code is contained in the following git repository: https://github.com/affeldt-aist/infotheo. My understanding is that this repository contains the code pertaining to 6 other papers, 3 of which are directly related to ECCs. These papers formalize Hamming codes, Reed-Solomon codes, BCH codes, cyclic codes, important parts of LDPC codes, and also some theoretical foundations such as Shannon's theorems.
+
+Another pair of papers formalizes the notion of insertion/deletion codes using Lean. These differ from typical ECCs in that, rather than merely having symbols be modified or replaced with a placeholder symbol (erased), they are designed to handle situations in which symbols may be arbitrarily inserted into or deleted from the string entirely, thus changing the length of the string. This is a separate problem to the one I am working on, but nevertheless interesting and unique.
+
+Several papers are less unique. It seems that hamming codes, repetition codes, and BCH codes have been formalized to death already.
+
+I also skimmed a few textbooks, to identify theory that is likely to be relevant to my project. In particular, I found that "A course in error-correcting codes" by J Justesen and T Høholdt contained an explanation of convolutional codes, including the Viterbi algorithm.
+
+I think that "Modern Coding Theory", by T. Richardson and R. Urbanke is also relevant. It contains an explanation of turbo codes, which by my understanding are a newer kind of convolutional code.
+
+I also read a chapter in "Error-Correcting Codes: A Mathematical Introduction" about Linear codes, and added my notes to my thesis proposal review (which is currently in the extremely rough drafting stage, merely containing a bunch of notes that may be useful at some point)
+
+I also spent two full days at the formal methods workshop, during which time I wasn't able to perform other research activities. Notable things I learnt about during the formal methods workshop include the K semantic framework, which can be used to generate formal verification code for a wide variety of theorem provers and programming languages, easing compatibility issues between different theorem provers and languages. I heard about Sel4, which is a formally verified OS microkernal. I heard about Ironbark, a formally verified CPU architecture. I also heard about a few less directly relevant things, for example, methods for ensuring the robustness of neural networks (e.g. ensuring that tiny perturbations in the inputs tends to cause only a tiny perturbation in the output), and even less relevantly, how a person's data record can be de-identified if you know a small amount of personal information about that person.
+
+I generally talked to a lot of academics there, and I'm glad I went, because it is my first experience at a conference-type event, and so I got to experience what a conference is like.
 
 \subsection{Viterbi related}
 
@@ -365,6 +391,14 @@ Decoding BCH
 
 Algebraic geometry
 
+\paragraph{Convolutional codes}
+
+direct quote: "The most important limitation on algebraic decoding algorithms is that only t < d=2 errors can be corrected, while in most cases error patterns of significantly higher weight could in principle be corrected"
+
+Generally correcting codes of highest probability, instead of making sure to correctly decode all codes with less than a certain number of errors. Mathematically most likely message.
+
+Better noise handling? (uncited)
+
 \subsubsection{(cited by Aman Kumar, book) Error Detection and Correction Codes by Diego L. Gonzalez}
 
 Moderate relevance. Information on ECCs
@@ -477,7 +511,7 @@ The thesis is aqbout how to fomally verify probabilitic algorithms. Not specific
 \begin{itemize}
 \item {Formally verified probabilistic algorithms example}
 \item {Probability foundations}
-\item {Probabilstic program modelling}
+\item {Probabilistic program modelling}
 \item {Verify Miller-Rabin test}
 \item {}
 \item {}
@@ -503,6 +537,18 @@ Conclusion: unlikely to be relevant. In Isabelle. On the other hand, is an appro
 \item {Integration}
 \item{Probability spaces}
 \end{itemize}
+
+\section{Other notes}
+
+\subsection{Conference vs Journals}
+
+Conference typically has faster turnaround than journals do (Michael)
+
+\subsection{Peer Review in Computer Science}
+
+Peer review is relatively low in computer science compared to other fields and especially low in workshops (Michael). Proceedings often available well before actual conference.
+
+E.g. arXiv pre-prints.
 
 \section{Research activities since commencement}
 
