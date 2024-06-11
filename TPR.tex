@@ -179,6 +179,12 @@ Coq formalization of Reed-Solomon coding.
 
 ACL2 verification of Hamming and Convolutional codes. Also, libraries for general ECC verification.
 
+Includes formal verification within a record-based memory model.
+
+Soft errors are errors which do not cause a permanent fault, but only a temporary one.
+
+Combinatorial decoding design described in 
+
 \subsubsection{Formalization of coding theory using lean}
 
 Repetition codes, Hamming (7,4) code, basics of coding theory formalized.
@@ -391,6 +397,20 @@ Coding theory: linear codes, cyclic codes, BCH, Reed-Solomon, convolutional code
 Factor graphs, binary erasure channel, binary memoryless symmetric channels, general channels, turbo codes, general ensembles, expander codes and flipping algorithm,
 
 \subsubsection{Robust error detection in communication and computational channels, 2007, 72 citations}
+
+\subsubsection{Convolutional coding lecture notes}
+
+Trellis diagram
+
+hard decision decoding (digital), soft decision decoding (analog)
+
+branch metric: hamming distance between expected parity bits and received ones.
+
+path metric: hamming distance over most likely path from initial state to current state in the trellis. By most likely, my understanding (could be wrong) is that it's path that minimises the branch errors over the transitions.
+
+Viterbi decoding exponential in $k$. For large $k$, you may use other decoding methods such as BCJR or Fano's sequential decoding scheme
+
+\subsubsection{Convolutional coding for SEU mitigation (cited by ACL2 paper)}
 
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
