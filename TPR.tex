@@ -415,8 +415,6 @@ Better noise handling? (uncited)
 
 Moderate relevance. Information on ECCs
 
-\subsubsection{(googled convolutional block codes) http://web.mit.edu/6.02/www/f2010/handouts/lectures/L8.pdf}
-
 \subsubsection{(found google search different book) A Course in Algebraic Error-Correcting Codes}
 
 Shannon's Theorem, Finite Fields, Block Codes, Linear Codes, Cyclic codes, Maximum Distance Separable Codes, Alternant and Algebraic Geometric Codes, Low Density Parity Check Codes, Reed-Muller and Kerdock Codes, p-Adic codes
@@ -438,17 +436,76 @@ Factor graphs, binary erasure channel, binary memoryless symmetric channels, gen
 
 \subsubsection{Robust error detection in communication and computational channels, 2007, 72 citations}
 
-\subsubsection{Convolutional coding lecture notes}
+\subsubsection{MIT Convolutional coding lecture notes}
 
-Trellis diagram
+\begin{itemize}
+\item A sliding window is moved over the input (this is why the code is called convolutional). At each position a number of parity bits are generated. These parity bits comprise the output.
 
-hard decision decoding (digital), soft decision decoding (analog)
+\item The constraint length K denotes the size of the sliding window
 
-branch metric: hamming distance between expected parity bits and received ones.
+\item If r bits are generated at each position, then the output will be r times
+the size of the original, and the code rate will be 1/r, as 1 bit of the
+original message is transmitted per r bits of the encoded message.
 
-path metric: hamming distance over most likely path from initial state to current state in the trellis. By most likely, my understanding (could be wrong) is that it's path that minimises the branch errors over the transitions.
+\item In a given window, the parity bits are generated using partity equations,
+which are polynomials over the elements of the window, in modulo 2.
 
-Viterbi decoding exponential in $k$. For large $k$, you may use other decoding methods such as BCJR or Fano's sequential decoding scheme
+\item Convolutional coding can be viewed in terms of a block diagram, which
+effectively interprets the algorithm in the aforementioned way, as outputs
+generated from polynomials
+
+\item It can also be viewed from a state machine perspective, where each state
+represents the past few perceived bits, and each transition refers to the
+bit that was read in this state and the bits that were output in this
+state, as the polynomials will always output the same bit if they are in
+the same state.
+
+\item Typically starts from the state which perceived two zeros beforehand
+
+\item The above is sufficient for encoding
+
+\item Decoding through maximum likelihood decoding. This is equivalent to
+finding the nearest valid codeword in terms of Hamming distance.
+
+\item The trellis is a structure that contains the state at each time step,
+and transitions from states at each time step to the corresponding states
+at the next time step. Basically adds time information to the state
+machine.
+
+\item Hard decision decoding is basically digital whereas soft decision decoding
+is basically analog. This algorithm is typically implemented on the
+circuit level, where we have voltages rather than binary 1s and 0s. Soft
+decoding improves error correcting performance.
+
+\item Want to find a path through the trellis that most closely approximates the
+received message.
+
+\item Branch metric: Hamming distance between output of a particular transition
+and the received message at that point.
+
+\item Path metric: the minimum sum of branch metrics on any path in order to get
+to a particular state.
+
+\item The Viterbi algorithm basically just applies dynamic programming to the
+trellis in order to minimize the path metric at each state and time. The
+path metric of any state at a given time is dependent on and only on the
+path metrics of all states at the previous point in time.
+
+\item Downside: decoding time exponential in K, the constraint length
+
+\item Downside: decoding time for first bit requires the entire path to be built
+
+\item In practice, starting decoding at 5 * K bits is a reasonable decoding
+window, because beyond this point it's unlikely for further future
+knowledge to affect the optimal first move on the path
+
+\item My own observation: surely at some point, the optimal first move will be
+optimal on a path towards each state, and at that point you could take
+that step confidently?
+
+\item BCJR or Fano's sequential decoding scheme may be used to decode for large
+K.
+\end{itemize}
 
 \subsubsection{Convolutional coding for SEU mitigation (cited by ACL2 paper)}
 
