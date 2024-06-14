@@ -203,7 +203,6 @@ Coq formalization of Reed-Solomon coding.
 
 \subsubsection{Formal verification of ECCs for memories using ACL2}
 
-
 Tail biting
 
 \begin{itemize}
@@ -530,6 +529,42 @@ K.
 
 \subsubsection{Convolutional coding for SEU mitigation (cited by ACL2 paper)}
 
+\begin{itemize}
+\item Discusses ECCs as a method for correcting soft errors
+
+\item In this case, tail-biting seems to refer to a circular data word, where
+the last bit wraps around to the first one.
+
+\item The problem under consideration requries fast algorithms, so typical
+stream-based methods are not appropriate. This is why the combinatorial
+method for convolutional encoding/decoding was developed.
+
+\item To minimize complexity and improve speed, focuses on single-bit
+correction.
+
+\item Very specific choice of generating polynomials: (1, 1, 1) and (1, 0, 1)
+
+\item Unfolded over entire word in order to improve speed, transforming from
+sequential into combinatorial
+
+\item Uses custom, seemingly novel, combinatorial method for decoding.
+
+\item Four received bits can uniquely identify the two bits which must have
+generated them. Thus, easy to decode uniquely in the case where we know
+that no errors have occurred.
+
+\item Firstly, decode uniquely as if there were no errors, and overlap the
+decoding modules to create another decoding option as if there were no
+errors.
+
+\item From this pair of decoding options, it is possible to reconstruct the
+decoded bit under the assumption of only a single error.
+
+\item Can correct one error per 5 bits, if well spaced.
+
+\item In first stage, decodes uniquely as if there were no errors
+In second stage,
+\end{itemize}
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
