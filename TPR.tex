@@ -203,19 +203,40 @@ Coq formalization of Reed-Solomon coding.
 
 \subsubsection{Formal verification of ECCs for memories using ACL2}
 
-ACL2 verification of Hamming and Convolutional codes. Also, libraries for general ECC verification.
 
-Includes formal verification within a record-based memory model.
-
-Soft errors are errors which do not cause a permanent fault, but only a temporary one.
-
-Combinatorial decoding design described in "Convolutional coding for SEU mitigation"
- 
 Tail biting
 
-Sliding windows: blocks. Rather than convolutional process happening sequentially over multiple clock cycles, all happening at the same time, using a combinatorial method.
+\begin{itemize}
+\item The purpose of this work is to design formally verifiable error correcting
+codes to correct soft errors in memories
 
-"Output bits may be interleaved [50] to minimize data corruption in case of soft errors" what does this mean?
+\item Soft errors cause the memory to temporarily return an incorrect bit, due
+interference from outside sources. Not a permanent fault, but a temporary one.
+
+\item One of the most notable (but irrelevant to me) features of this work is
+that it explicitly involves the handling of memories. In particular it
+implements them in a formal record-based memory model.
+
+\item Typically, encoding/decoding of convolutional codes happens over several
+clock cycles. However, this implementation uses a combinatorial method.
+My understanding is that this increases the rate at which error correction
+can occur. Apparently combinatorial circuits are ones which do not use memory.
+
+\item In this implementation, rather than taking a stream of bits as input, it
+breaks it down into blocks. Encoding starts in state 00, and two null bits
+are placed at the end, in order to provide enough padding to properly
+encode all of the bits. This paper refers to this technique as tail-biting,
+but I believe that this is incorrect. This technique appears to be
+zero-tailed encoding (see the mathworks page on tail-biting convolutional
+coding).
+
+\item Mentions that output bits may be interleaved to minimize data corruption.
+Not entirely sure what this means. Source is a patent, hard to find
+description of what interleaving precisely means.
+
+\item Combinatorial decoder is based on another paper: "Convolutional Coding for SEU
+mitigation"
+\end{itemize}
 
 \subsubsection{Formalization of coding theory using lean}
 
