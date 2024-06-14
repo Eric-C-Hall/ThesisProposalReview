@@ -209,7 +209,13 @@ Includes formal verification within a record-based memory model.
 
 Soft errors are errors which do not cause a permanent fault, but only a temporary one.
 
-Combinatorial decoding design described in 
+Combinatorial decoding design described in "Convolutional coding for SEU mitigation"
+ 
+Tail biting
+
+Sliding windows: blocks. Rather than convolutional process happening sequentially over multiple clock cycles, all happening at the same time, using a combinatorial method.
+
+"Output bits may be interleaved [50] to minimize data corruption in case of soft errors" what does this mean?
 
 \subsubsection{Formalization of coding theory using lean}
 
