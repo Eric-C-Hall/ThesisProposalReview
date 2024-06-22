@@ -341,7 +341,7 @@ VLSI, RATO, seems unrelated.
 
 \subsection{Error-Correcting codes theory}
 
-\subsubsection{Error correcting codes: A  mathematical introduction}
+\subsubsection{Error correcting codes: A  mathematical introduction (1998)}
 
 \paragraph{Linear codes}
 
@@ -413,7 +413,9 @@ All simplex codes are equideistant codes.
 
 todo: continue from theorem 6.7
 
-\subsubsection{(found via google search) A course in error-correcting codes, by J Justesen, T Høholdt }
+\subsubsection{(found via google search) A course in error-correcting codes, by J Justesen, T Høholdt (2004)}
+
+Convolutional codes explanation seems too theoretical and not explained in an intuitive way
 
 Includes convolutional codes info
 
@@ -431,24 +433,27 @@ Generally correcting codes of highest probability, instead of making sure to cor
 
 Better noise handling? (uncited)
 
-\subsubsection{(cited by Aman Kumar, book) Error Detection and Correction Codes by Diego L. Gonzalez}
+\subsubsection{(cited by Aman Kumar, book) Error Detection and Correction Codes by Diego L. Gonzalez (2008)}
+
+Difficult to get a hold of, as our library doesn't contain the book it is contained in. Book is from a biological perspective, although the 
 
 Moderate relevance. Information on ECCs
 
-\subsubsection{(found google search different book) A Course in Algebraic Error-Correcting Codes}
+\subsubsection{(found google search different book) A Course in Algebraic Error-Correcting Codes (2020)}
+
+Doesn't seem to include convolutional stuff
 
 Shannon's Theorem, Finite Fields, Block Codes, Linear Codes, Cyclic codes, Maximum Distance Separable Codes, Alternant and Algebraic Geometric Codes, Low Density Parity Check Codes, Reed-Muller and Kerdock Codes, p-Adic codes
 
-\subsubsection{Hamming, R.W.: Error detecting and error correcting codes.}
-
 \subsubsection{The Theory of Information and Coding, Encyclopedia of Mathematics and its Applica-
 tions}
+
+A little bit old. Only 4 sections on convolutional codes
 
 Information theory: entropy, discrete memoryless channels, discrete memoryless sources, the gaussian channel, the source-channel coding theorem
 
 Coding theory: linear codes, cyclic codes, BCH, Reed-Solomon, convolutional codes, variable-length source coding
 
-\subsubsection{Polynomial codes over certain finite fields}
 
 \subsubsection{Modern Coding Theory. (probably intend the one by T. Richardson, R. Urbanke, 2008)}
 
@@ -456,7 +461,7 @@ Factor graphs, binary erasure channel, binary memoryless symmetric channels, gen
 
 \subsubsection{Robust error detection in communication and computational channels, 2007, 72 citations}
 
-\subsubsection{MIT Convolutional coding lecture notes}
+\subsubsection{MIT Convolutional coding lecture notes (2010)}
 
 \begin{itemize}
 \item A sliding window is moved over the input (this is why the code is called convolutional). At each position a number of parity bits are generated. These parity bits comprise the output.
@@ -565,6 +570,32 @@ decoded bit under the assumption of only a single error.
 \item In first stage, decodes uniquely as if there were no errors
 In second stage,
 \end{itemize}
+
+\subsubsection{Fundamentals of Convolutional Coding (1999 original, 2015 current)}
+
+Reed solomon codes are particularly good at dealing with burst errors
+
+Viterbi good for white Gaussian noise.
+
+Viterbi can easily exploit soft-decision information, unlike Reed-Solomon.
+
+Concatenated coding system: Viterbi decoder corrects most channel errors but occassionally outputs a burst of errors. Reed-Solomon is well adapted to cope with burst of errors.
+
+My own observation: perhaps the reason that convolutional codes work less well for burst errors is that by design, they focus on nearby bits, whereas block codes by design include bits far away? Similarly, convolutional codes work best for errors that are regularly spaced.
+
+\subsubsection{Hamming, R.W.: Error detecting and error correcting codes.}
+
+Hamming's original paper
+
+\subsubsection{Viterbi A: Convolutional Codes and their Performance in
+Communication Systems (1971)}
+
+Viterbi's original paper? Or maybe one of their papers
+
+\subsubsection{Polynomial codes over certain finite fields}
+
+Original Reed-Solomon paper
+
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
