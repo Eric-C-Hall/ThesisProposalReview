@@ -454,6 +454,28 @@ Information theory: entropy, discrete memoryless channels, discrete memoryless s
 
 Coding theory: linear codes, cyclic codes, BCH, Reed-Solomon, convolutional codes, variable-length source coding
 
+\paragraph{Introduction}
+
+Binary symmetric source: outputs bits at random, 1 equally likely as 0, R symbols per unit time. (For example, if R = 1/3, then 3 bits can be transmitted over the channel for every bit that is produced by the source. With rates larger than 1, we can transmit some symbols and require the reciever to guess the remaining ones.)
+
+Binary symmetric channel: transmit 1 bit per unit time, probability p that the output bit will flip.
+
+Bit error probability: expected number of bit errors per unit time
+
+Discrete memory
+
+(n, k) codes. These codes have rate $R = k/n$
+
+Hamming codes.
+
+Equation for the boundary between achievable $(R, P_e)$ pairs: $R = \frac{1 - H_2(p)}{1 - H_2(P_e)}$, for $p$ the probability of bit error in the channel, $R$ the rate of the code, $P_e$ the bit error probability of the code, and $H_2$ the binary entropy function, given by $H_2(x) = -x\log_2 x - (1 - x) \log_2(1-x)$.
+
+If $R < 1 - H_2(p)$, then arbrarily low $P_e$ is achievable! That is, there is a bit rate at which we can have arbitrarily few errors.
+
+\paragraph{Channel coding Theorem}
+
+Essential idea is that for any discrete memoryless channel, there is a channel capacity $C$ for which  it is possible to find algorithms which approach $C$ in rate and approach 0 in bit error probability
+
 
 \subsubsection{Modern Coding Theory. (probably intend the one by T. Richardson, R. Urbanke, 2008)}
 
@@ -602,6 +624,35 @@ Non reliable source: Apparently convolutional codes are better for burst errors 
 
 Non reliable source: apparently hardware is more complex for block codes than for convolutional codes?
 
+\subsubsection{Books to consider}
+
+A Student's Guide to Coding and Information Theory
+
+INFORMATION THEORY AND CODING: A Fundamental Approach
+
+Information Theory and Coding
+by Murlidhar Kulkarni and K.S. 
+
+Coding and Information Theory: 134
+by Steven Roman
+
+Coding Theory: The Essentials: 150
+by D. G. Hoffman, D. A. Leonard, et al.
+
+Information Theory and Coding: Information, Source Coding and Channel Coding
+by Dr. J. S. Chitode
+
+Coding and Information Theory
+by Richard W. Hanning
+
+Information Theory, Coding and Cryptography
+
+Information-Spectrum Methods in Information Theory: 50
+by Te Sun Han and H. Koga
+5.0 out of 5 stars
+
+Convolutional Coding: Fundamentals and Applications
+by L H Charles Lee and Charles Lee
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
