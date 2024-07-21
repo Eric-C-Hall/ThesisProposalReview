@@ -638,6 +638,48 @@ Viterbi's original paper? Or maybe one of their papers
 
 Original Reed-Solomon paper
 
+\subsubsection{Wikipedia}
+
+\paragraph{Convolutional code} Turbo codes and LDPC codes are more modern, coming arbitrarily close to the Shannon limit.
+
+Errors appear in bursts, which must be accounted for. This is typically accounted for by interleaving data before convolutional coding, so that the outer code (typically Reed-Solomon) can correct the majority of the errors
+
+Typically predefined codes based on research papers are used in the industry, to avoid accidentally selecting a convolutional code with bad properties.
+
+Used in Intelsat and Digital Video Broadcasting
+
+Turbo codes are affected by an error floor: concatenation with an algebraic code helps solve this issue.
+
+\paragraph {Error correction code}
+
+By interleaving, the errors are spread out, making errors more uniformly distributed, avoiding issues caused by bursts of errors.
+
+downside: may increase delay because entire interleaved packet must be received before it can be decoded.
+
+\paragraph{Capacity-approaching codes}
+
+\paragraph{Error floor}
+
+The error floor is a phenomenon encountered in modern iterated sparse graph-based error correcting codes like LDPC codes and turbo codes. When the bit error ratio (BER) is plotted for conventional codes like Reed–Solomon codes under algebraic decoding or for convolutional codes under Viterbi decoding, the BER steadily decreases in the form of a curve as the SNR condition becomes better. For LDPC codes and turbo codes there is a point after which the curve does not fall as quickly as before, in other words, there is a region in which performance flattens. This region is called the error floor region. The region just before the sudden drop in performance is called the waterfall region.[1]
+
+Error floors are usually attributed to low-weight codewords (in the case of Turbo codes) and trapping sets or near-codewords (in the case of LDPC codes).[2]
+
+\paragraph{Low-density parity check}
+
+Affected by error floor, sometimes adds Reed-Solomon on top
+
+5G uses polar code for control channels and LDPC for data channels.
+
+Although LDPC code has had its success in commercial hard disk drives, to fully exploit its error correction capability in SSDs demands unconventional fine-grained flash memory sensing, leading to an increased memory read latency. LDPC-in-SSD[22] is an effective approach to deploy LDPC in SSD with a very small latency increase, which turns LDPC in SSD into a reality. Since then, LDPC has been widely adopted in commercial SSDs in both customer-grades and enterprise-grades by major storage venders. Many TLC (and later) SSDs are using LDPC codes. A fast hard-decode (binary erasure) is first attempted, which can fall back into the slower but more powerful soft decoding
+
+\subsubsection{Other}
+
+One advantage of convolutional codes is that they allow for soft-decision encoding 
+
+Polar codes “Polar Code Appropriateness for Ultra-Reliable and Low-Latency Use Cases of 5G Systems”
+
+Canberra Deep Space Communication Complex for the Deep Space Network
+
 \subsubsection{Non-reliable}
 
 Non reliable source: Apparently convolutional codes are better for burst errors whereas block codes are better for more evenly distributed errors?
