@@ -343,6 +343,12 @@ VLSI, RATO, seems unrelated.
 
 \subsubsection{Error correcting codes: A  mathematical introduction (1998)}
 
+\subsubsection{Hamming (7,4) and (8,4) codes}
+
+Note that the circles in the Hamming (7,4) code split the bits up into independent regions. Each parity check will tell you whether the bit is in a certain region or not. This is what allows for 1-bit error correction, because each independent region is true only with a specific combination of parity checks.
+
+In the hamming (8,4) code, an additional parity bit checks the system as a whole. This allows for simultaneous 2-bit error detection and 1-bit error correction. Basically, do 1-bit error correction as per the hamming (7,4) code, and use the additional parity bit to check whether the result is correct.
+
 \paragraph{Linear codes}
 
 0 is in all linear codes
@@ -601,7 +607,6 @@ Original Reed-Solomon paper
 Non reliable source: Apparently convolutional codes are better for burst errors whereas block codes are better for more evenly distributed errors?
 
 Non reliable source: apparently hardware is more complex for block codes than for convolutional codes?
-
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
