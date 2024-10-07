@@ -882,6 +882,16 @@ The HOL4 interactive theorem prover will be used to prove theorems.
 
 \section{How my research will contribute to my field of study}
 
+\section{Things I learnt}
+
+Probably a good idea to avoid state, because more state means that when proving things, we have to include preconditions to say that the state is valid, which makes things more complciated. Better to keep the programs more functional in general. Originally was calculating relevant_input early and then passing the calculated value in as an argument, but this means we lose the context of what the input is, so that we have to include it as a precondition if we want to know what the input is 
+
+General state machine version and more specific state machine version. General version is weaker than specific version, it is easier to generate, but gives you less information when you use it. Can theoretically convert one form to the other.
+
+Efficiently computable version as well as more mathematically designed version. The efficiently computable version can be computed and the mathematically designed version is better for proofs. In particular, the mathematical version is stateless, whereas the efficiently computable version is stateful, using the state of the machine to aid in using dynamic programming to compute the function more quickly. This may be a general pattern in dynamic programming and theorem proving: having a stateful, efficiently computable version, and a stateless, mathematical version. Perhaps I can write up something abuot this? One version in the functional paradigm, and one version in a stateful paradigm, more similar to imperative languages.
+
+Unit tests still have a place: even if an important theorem has been proven, there are limitations to what has been proven. Unit tests with concrete values may help to improve confidence that the program is actually doing what it was supposed to. There were many bugs in writing the code. For example, the previous state in the first row was some random value instead of none, the previous state in unreachable states other than in the first row was some random value instead of none.
+
 \section{Bibliography}
 
 
